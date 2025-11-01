@@ -7,8 +7,7 @@ urlpatterns = [
     path("admin/", admin.site.urls),
 
     # HTML na raiz
-    path("", include("core.urls")),      # <-- NOTA: include("core.urls") com aspas
-
+    path("", include("core.urls")),      # 
     # API (mesmo urls por simplicidade)
     path("api/", include("core.urls")),  # <-- idem
 ]
@@ -16,3 +15,4 @@ urlpatterns = [
 # Servir MEDIA em desenvolvimento
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
