@@ -18,10 +18,10 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
 
-    # Terceiros (apenas UMA destas linhas, não as duas!)
-    "rest_framework",                     # ✔️ recomendado
+    # Terceiros 
+    "rest_framework",                   
 
-    # Tuas apps
+    # apps
     "core",
 ]
 # --- Middleware (necessário para admin/sessões/mensagens, etc.) ---
@@ -52,7 +52,7 @@ DATABASES = {
     }
 }
 
-# --- PK por omissão (evita o warning do AutoField) ---
+# --- evita o warning do AutoField ---
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 # --- Templates ---
@@ -80,10 +80,11 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'core', 'static')]# website/static (e
 MEDIA_URL = "/media/"
 MEDIA_ROOT = BASE_DIR / "media"
 
-# --- (Opcional) Config DRF básica ---
+# ---Config DRF básica ---
 REST_FRAMEWORK = {
     "DEFAULT_RENDERER_CLASSES": ["rest_framework.renderers.JSONRenderer"],
     "DEFAULT_PARSER_CLASSES": ["rest_framework.parsers.JSONParser"],
 }
 # config/settings.py
+
 SECRET_KEY = "vi+0n)_#5ta=s!+&(1oj+&-3bhr1gsji-!&y)1^31v7j%j^kf7"
