@@ -13,22 +13,22 @@
 ---
 
 ## 📑 Índice
-- [✨ Funcionalidades](#-funcionalidades)
-- [🏗️ Arquitetura do Projeto](#️-arquitetura-do-projeto)
-- [🛠️ Stack Tecnológica](#-stack-tecnológica)
-- [📦 Pré-requisitos](#-pré-requisitos)
-- [⚡ Arranque Rápido (Docker)](#-arranque-rápido-docker)
-- [🔐 Configuração (.env)](#-configuração-env)
-- [📂 Estrutura do Projeto](#-estrutura-do-projeto)
-- [🧪 Testes](#-testes)
-- [🛣️ Roadmap](#️-roadmap)
-- [🤝 Contribuir](#-contribuir)
-- [📄 Licença](#-licença)
-- [👤 Autores](#-autores)
+- [ Funcionalidades](#-funcionalidades)
+- [Arquitetura do Projeto](#️-arquitetura-do-projeto)
+- [Stack Tecnológica](#-stack-tecnológica)
+- [Pré-requisitos](#-pré-requisitos)
+- [Arranque Rápido (Docker)](#-arranque-rápido-docker)
+- [Configuração (.env)](#-configuração-env)
+- [Estrutura do Projeto](#-estrutura-do-projeto)
+- [Testes](#-testes)
+- [Roadmap](#️-roadmap)
+- [Contribuir](#-contribuir)
+- [Licença](#-licença)
+- [ Autores](#-autores)
 
 ---
 
-## ✨ Funcionalidades
+## Funcionalidades
 - ✅ Catálogo de filmes (cartaz, destaques)
 - ✅ Pesquisa e filtros (título, género)
 - ✅ Detalhes do filme (sinopse, trailer, posters)
@@ -39,7 +39,7 @@
 
 ---
 
-## 🏗️ Arquitetura do Projeto
+## Arquitetura do Projeto
 A aplicação é composta por:
 - **Frontend:** React + Vite (TypeScript) para interface do utilizador.
 - **Backend:** Django + Django REST Framework para lógica de negócio e API.
@@ -83,7 +83,7 @@ Opcionalmente, pode incluir **Nginx** como proxy reverso para produção.
 
 ---
 
-## 📦 Pré-requisitos
+##  Pré-requisitos
 - Docker & Docker Compose
 - Node.js (para desenvolvimento frontend)
 - Python 3.x (para desenvolvimento backend)
@@ -109,7 +109,7 @@ docker compose exec backend python manage.py createsuperuser
 
 ---
 
-## 🔐 Configuração (.env)
+##  Configuração (.env)
 **Backend – `backend/.env`**
 ```
 DJANGO_SECRET_KEY=altera_esta_chave
@@ -135,7 +135,7 @@ VITE_API_URL=http://localhost:8000/api
 
 ---
 
-## 📂 Estrutura do Projeto
+## Estrutura do Projeto
 ```
 Website-Cinemix/
 ├─ config/                # settings.py, urls.py, asgi.py, wsgi.py
@@ -172,13 +172,13 @@ docker compose exec frontend npm test
 
 ---
 
-## 🛣️ Roadmap
+##  Roadmap
 - [ ] Documentação da API (Swagger / drf-spectacular)
 - [ ] CI/CD (GitHub Actions)
 
 ---
 
-## 🤝 Contribuir
+## Contribuir
 1. Fazer fork
 2. `git checkout -b feat/nova-feature`
 3. `git commit -m "feat: descrição"`
@@ -195,4 +195,5 @@ MIT © 2025 [Steve45Green] - José Ameixa
 ## 👤 Autores
 - José Ameixa — Full Stack Developer
 - Diogo Vaz - Full Stack Developer
+
 
