@@ -6,13 +6,10 @@ from django.conf.urls.static import static
 urlpatterns = [
     path("admin/", admin.site.urls),
 
-    # HTML na raiz
-    path("", include("core.urls")),      # 
-    # API (mesmo urls por simplicidade)
-    path("api/", include("core.urls")),  # <-- idem
+    path("api/", include(("backend.core.urls", "core"), namespace="core")),
 ]
 
-# Servir MEDIA em desenvolvimento
+# Servir media/static em DEBUG (útil no desenvolvimento)
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
