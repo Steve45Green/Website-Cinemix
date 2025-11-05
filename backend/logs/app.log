@@ -1,0 +1,32 @@
+[2025-11-05 15:23:07] [INFO] django.utils.autoreload (autoreload:667) — Watching for file changes with StatReloader
+[2025-11-05 15:31:37] [INFO] django.utils.autoreload (autoreload:667) — Watching for file changes with StatReloader
+[2025-11-05 15:35:29] [INFO] django.utils.autoreload (autoreload:667) — Watching for file changes with StatReloader
+[2025-11-05 15:44:14] [INFO] django.utils.autoreload (autoreload:667) — Watching for file changes with StatReloader
+[2025-11-05 16:05:43] [INFO] django.utils.autoreload (autoreload:667) — Watching for file changes with StatReloader
+[2025-11-05 16:08:30] [INFO] django.utils.autoreload (autoreload:667) — Watching for file changes with StatReloader
+[2025-11-05 16:09:08] [INFO] django.utils.autoreload (autoreload:667) — Watching for file changes with StatReloader
+[2025-11-05 16:54:12] [INFO] django.utils.autoreload (autoreload:667) — Watching for file changes with StatReloader
+[2025-11-05 16:57:31] [INFO] django.utils.autoreload (autoreload:265) — C:\Users\Jose ameixa\Documents\GitHub\website\backend\config\settings.py changed, reloading.
+[2025-11-05 16:57:32] [INFO] django.utils.autoreload (autoreload:667) — Watching for file changes with StatReloader
+[2025-11-05 16:57:33] [INFO] django.utils.autoreload (autoreload:667) — Watching for file changes with StatReloader
+[2025-11-05 17:00:26] [INFO] django.utils.autoreload (autoreload:265) — C:\Users\Jose ameixa\Documents\GitHub\website\backend\core\views.py changed, reloading.
+[2025-11-05 17:00:27] [INFO] django.utils.autoreload (autoreload:667) — Watching for file changes with StatReloader
+[2025-11-05 17:00:27] [INFO] django.utils.autoreload (autoreload:667) — Watching for file changes with StatReloader
+[2025-11-05 17:01:26] [INFO] django.utils.autoreload (autoreload:667) — Watching for file changes with StatReloader
+[2025-11-05 17:07:57] [INFO] django.utils.autoreload (autoreload:667) — Watching for file changes with StatReloader
+[2025-11-05 17:10:21] [INFO] django.utils.autoreload (autoreload:667) — Watching for file changes with StatReloader
+[2025-11-05 17:15:22] [INFO] django.utils.autoreload (autoreload:667) — Watching for file changes with StatReloader
+[2025-11-05 17:21:59] [INFO] django.utils.autoreload (autoreload:667) — Watching for file changes with StatReloader
+[2025-11-05 17:23:37] [INFO] django.utils.autoreload (autoreload:265) — C:\Users\Jose ameixa\Documents\GitHub\website\backend\config\settings.py changed, reloading.
+[2025-11-05 17:23:38] [INFO] django.utils.autoreload (autoreload:667) — Watching for file changes with StatReloader
+[2025-11-05 17:28:11] [INFO] django.utils.autoreload (autoreload:265) — C:\Users\Jose ameixa\Documents\GitHub\website\backend\core\urls.py changed, reloading.
+[2025-11-05 17:28:12] [INFO] django.utils.autoreload (autoreload:667) — Watching for file changes with StatReloader
+[2025-11-05 17:28:49] [INFO] django.utils.autoreload (autoreload:265) — C:\Users\Jose ameixa\Documents\GitHub\website\backend\core\urls.py changed, reloading.
+[2025-11-05 17:28:50] [INFO] django.utils.autoreload (autoreload:667) — Watching for file changes with StatReloader
+[2025-11-05 17:28:51] [INFO] django.utils.autoreload (autoreload:667) — Watching for file changes with StatReloader
+[2025-11-05 17:39:44] [INFO] django.utils.autoreload (autoreload:265) — C:\Users\Jose ameixa\Documents\GitHub\website\backend\core\models\listas.py changed, reloading.
+[2025-11-05 17:39:46] [INFO] django.utils.autoreload (autoreload:667) — Watching for file changes with StatReloader
+[2025-11-05 17:42:36] [INFO] django.utils.autoreload (autoreload:265) — C:\Users\Jose ameixa\Documents\GitHub\website\backend\config\settings.py changed, reloading.
+[2025-11-05 17:42:39] [INFO] django.utils.autoreload (autoreload:667) — Watching for file changes with StatReloader
+[2025-11-05 17:43:38] [INFO] django.utils.autoreload (autoreload:265) — C:\Users\Jose ameixa\Documents\GitHub\website\backend\config\settings.py changed, reloading.
+[2025-11-05 17:43:40] [INFO] django.utils.autoreload (autoreload:667) — Watching for file changes with StatReloader
