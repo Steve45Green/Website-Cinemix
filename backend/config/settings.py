@@ -10,10 +10,6 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Segurança / Debug
 # ---------------------------------
 # Em produção, define SECRET_KEY por variável de ambiente
-SECRET_KEY = os.environ.get(
-    "DJANGO_SECRET_KEY",
-    "dev-insecure-key-change-me-only-for-local",  # usar apenas em DEV
-)
 
 # DEBUG: True em DEV; False em PROD (via variável de ambiente)
 DEBUG = os.environ.get("DJANGO_DEBUG", "1") in ("1", "true", "True")
@@ -280,4 +276,5 @@ LOGGING = {
             "propagate": False,
         },
     },
+
 }
