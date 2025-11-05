@@ -1,0 +1,89 @@
+name: website-cinemix-dev
+
+services:
+  db:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-cinemix}
+      POSTGRES_USER: ${POSTGRES_USER:-cinemix}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-cinemix}
+      TZ: Europe/Lisbon
+    ports:
+      - "${POSTGRES_PORT:-5432}:5432"
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-cinemix} -d ${POSTGRES_DB:-cinemix}"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+
+  # redis:
+  #   image: redis:7-alpine
+  #   restart: unless-stopped
+  #   command: ["redis-server", "--save", "", "--appendonly", "no"]
+  #   ports:
+  #     - "${REDIS_PORT:-6379}:6379"
+  #   healthcheck:
+  #     test: ["CMD", "redis-cli", "ping"]
+  #     interval: 5s
+  #     timeout: 3s
+  #     retries: 20
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    env_file: .env
+    environment:
+      # Se tiveres DATABASE_URL no .env, Django pode usá-lo (dj-database-url).
+      DATABASE_URL: ${DATABASE_URL:-postgres://cinemix:cinemix@db:5432/cinemix}
+      DJANGO_SETTINGS_MODULE: ${DJANGO_SETTINGS_MODULE:-config.settings}
+      PYTHONUNBUFFERED: "1"
+      APP_ENV: dev
+      # Mapear host/port da DB explicitamente (útil para scripts wait-for):
+      DB_HOST: db
+      DB_PORT: ${POSTGRES_PORT:-5432}
+      POSTGRES_DB: ${POSTGRES_DB:-cinemix}
+      POSTGRES_USER: ${POSTGRES_USER:-cinemix}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-cinemix}
+      # REDIS_URL: ${REDIS_URL:-redis://redis:6379/0}
+    volumes:
+      - ./backend:/code
+      - static_volume:/code/staticfiles
+      - media_volume:/code/media
+    working_dir: /code
+    depends_on:
+      db:
+        condition: service_healthy
+      # redis:
+      #   condition: service_healthy
+    ports:
+      - "8765:8000"
+    # Em dev, deixamos o teu entrypoint a correr o runserver ou gunicorn consoante preferires.
+    command: >
+      sh -c "/code/entrypoint.sh"
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+      target: dev
+    environment:
+      # O Vite acede ao backend via http://localhost:8765 (nginx não é necessário em dev)
+      VITE_API_URL: ${VITE_API_URL:-http://localhost:8765}
+      NODE_ENV: development
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    command: ["npm","run","dev","--","--host","0.0.0.0","--port","5173"]
+    depends_on:
+      - backend
+    ports:
+      - "${FRONTEND_PORT:-5173}:5173"
+
+volumes:
+  db_data:
+  static_volume:
+  media_volume:
