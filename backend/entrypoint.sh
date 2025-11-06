@@ -23,5 +23,4 @@ python manage.py collectstatic --noinput || true
 
 # Em DEV: autoreload
 exec python manage.py runserver 0.0.0.0:8000
-# Em PROD (se quiseres usar o mesmo entrypoint):
 # exec gunicorn config.asgi:application --workers ${GUNICORN_WORKERS:-3} --worker-class uvicorn.workers.UvicornWorker --bind 0.0.0.0:8000 --timeout ${GUNICORN_TIMEOUT:-120}
