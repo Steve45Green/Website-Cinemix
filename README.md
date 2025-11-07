@@ -189,12 +189,13 @@ docker compose exec frontend npm test
 
 ## 📄 Licença
 MIT © 2025 [Steve45Green] - José Ameixa 
-
+MIT © 2025[Diogo Vaz]- Diogo Vaz 
 ---
 
 ## 👤 Autores
 - José Ameixa — Full Stack Developer
 - Diogo Vaz - Full Stack Developer
+
 
 
 
