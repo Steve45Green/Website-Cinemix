@@ -60,7 +60,7 @@ A aplicação é composta por:
           │
           ▼
 ┌────────────────────┐
-│    Docker Compose  │  (Orquestra todos os serviços)
+│    Docker Compose  │  
 └────────────────────┘
 ```
 
@@ -195,6 +195,7 @@ MIT © 2025 [Steve45Green] - José Ameixa
 ## 👤 Autores
 - José Ameixa — Full Stack Developer
 - Diogo Vaz - Full Stack Developer
+
 
 
 
