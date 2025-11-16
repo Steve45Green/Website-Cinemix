@@ -50,11 +50,14 @@ class ElencoSerializer(serializers.ModelSerializer):
             "created_at", "updated_at"
         ]
         read_only_fields = ["filme", "created_at", "updated_at"]
+
 class VideoSerializer(serializers.ModelSerializer):
     class Meta:
         model = Video
         fields = [
-            "id", "filme", "tipo", "titulo", "url", "fonte", "idioma",
+            "id", "filme", "tipo", "titulo", "url",
+            "site", # <--- CORREÇÃO (antes era "fonte")
+            "idioma",
             "created_at", "updated_at"
         ]
         read_only_fields = ["created_at", "updated_at"]
