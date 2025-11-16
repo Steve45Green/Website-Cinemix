@@ -1,6 +1,6 @@
 import os
 from pathlib import Path
-from datetime import timedelta # <--- NOVO IMPORT
+from datetime import timedelta # 
 
 # ---------------------------------
 # Caminhos base
@@ -201,3 +201,4 @@ SPECTACULAR_SETTINGS = {
         'displayRequestDuration': True,
     },
 }
+
