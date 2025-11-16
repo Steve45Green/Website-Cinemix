@@ -11,3 +11,7 @@ uvicorn
 
 # Utilidades
 django-cors-headers
+
+# Autenticação e Documentação
+djangorestframework-simplejwt
+drf-spectacular
