@@ -9,7 +9,7 @@ urlpatterns = [
     path("api/", include(("backend.core.urls", "core"), namespace="core")),
 ]
 
-# Servir media/static em DEBUG (útil no desenvolvimento)
+# Servir media/static em DEBUG (Bastante útil no desenvolvimento)
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
