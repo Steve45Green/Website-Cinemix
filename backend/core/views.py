@@ -194,4 +194,3 @@ class FavoritoViewSet(
     queryset = Favorito.objects.select_related("utilizador", "filme").all()
     serializer_class = FavoritoSerializer
     permission_classes = [permissions.IsAuthenticated]
-
