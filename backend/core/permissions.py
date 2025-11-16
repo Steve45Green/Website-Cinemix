@@ -12,4 +12,3 @@ class IsOwnerOrReadOnly(BasePermission):
             return True
         owner = getattr(obj, "autor", None) or getattr(obj, "utilizador", None)
         return owner == request.user
-
