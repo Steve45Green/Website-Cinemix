@@ -1,0 +1,13 @@
+# Frameworks
+django
+djangorestframework
+
+# Base de Dados
+psycopg[binary]
+
+# Servidor (Produção)
+gunicorn
+uvicorn
+
+# Utilidades
+django-cors-headers
