@@ -1,4 +1,3 @@
-
 # 🎬 Website Cinemix
 [![Status](https://img.shields.io/badge/status-active-success.svg)]()
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)]()
@@ -195,9 +194,5 @@ MIT © 2025[Diogo Vaz]- Diogo Vaz
 ## 👤 Autores
 - José Ameixa — Full Stack Developer
 - Diogo Vaz - Full Stack Developer
-
-
-
-
 
 
