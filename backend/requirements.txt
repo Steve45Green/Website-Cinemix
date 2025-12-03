@@ -1,0 +1,22 @@
+# Frameworks
+django
+djangorestframework
+
+# Base de Dados
+psycopg[binary]
+
+# Servidor (Produção)
+gunicorn
+uvicorn
+
+# Utilidades
+django-cors-headers
+requests
+
+# Autenticação e Documentação
+djangorestframework-simplejwt
+drf-spectacular
+
+# Scraping
+requests
+beautifulsoup4

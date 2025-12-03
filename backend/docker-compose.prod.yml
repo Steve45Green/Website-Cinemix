@@ -1,0 +1,69 @@
+# ==============================================================================
+# Docker Compose para o Ambiente de Produção
+# ==============================================================================
+# Este ficheiro define os serviços, redes e volumes para correr a aplicação
+# em produção. Ele estende ou sobrepõe as configurações do `docker-compose.yml` base.
+
+services:
+  # --- Serviço do Backend (Django) ---
+  # Sobrepõe o serviço 'backend' definido no ficheiro base.
+  backend:
+    # Define variáveis de ambiente específicas para produção.
+    environment:
+      APP_ENV: prod  # Variável para indicar que estamos em ambiente de produção.
+      DEBUG: "0"     # Desativa o modo de depuração do Django, crucial para a segurança.
+      # IMPORTANTE: Defina o seu domínio de produção aqui.
+      # Isto restringe o acesso à API apenas ao seu frontend.
+      CORS_ALLOWED_ORIGINS: "https://oseudominio.com"
+
+    # Monta o volume `static_data` no diretório onde o Django irá
+    # colocar os ficheiros estáticos após correr o comando `collectstatic`.
+    volumes:
+      - static_data:/code/staticfiles
+
+    # Sobrepõe o comando de desenvolvimento. Em produção, executa um script de
+    # entrada (`entrypoint.sh`) que tipicamente faz o seguinte:
+    # 1. Espera que a base de dados esteja pronta.
+    # 2. Executa as migrações do Django (`migrate`).
+    # 3. Recolhe os ficheiros estáticos (`collectstatic`).
+    # 4. Inicia o servidor de aplicação (ex: Gunicorn).
+    command: >
+      sh -c "/code/entrypoint.sh"
+
+    # Expõe a porta 8000 apenas para outros serviços dentro da rede Docker
+    # (neste caso, para o Nginx). Não a publica para o host.
+    expose:
+      - "8000"
+
+  # --- Serviço do Web Server (Nginx) ---
+  # Este serviço atua como um reverse proxy para o backend e serve os
+  # ficheiros estáticos diretamente, o que é muito mais eficiente.
+  web:
+    build:
+      context: ../frontend  # O contexto de build é o diretório do frontend.
+      dockerfile: ../frontend/Dockerfile # O Dockerfile a usar.
+      target: prod # Especifica o 'stage' de produção no Dockerfile do Nginx.
+    
+    # Garante que o serviço 'web' (Nginx) só arranca depois do serviço
+    # 'backend' (Django) ter sido iniciado.
+    depends_on:
+      backend:
+        condition: service_started
+
+    # Mapeia a porta 80 do host para a porta 80 do container.
+    # Isto torna a aplicação acessível através do navegador em http://localhost.
+    ports:
+      - "80:80"
+
+    # Monta o volume `static_data` em modo 'read-only' (ro).
+    # O Nginx terá acesso aos ficheiros estáticos gerados pelo Django
+    # para os servir diretamente aos clientes.
+    volumes:
+      - static_data:/static:ro
+
+# --- Definição de Volumes ---
+# Os volumes são a forma preferida de persistir dados em Docker.
+volumes:
+  # Volume nomeado para partilhar os ficheiros estáticos entre o container
+  # do Django (que os gera) e o container do Nginx (que os serve).
+  static_data:
